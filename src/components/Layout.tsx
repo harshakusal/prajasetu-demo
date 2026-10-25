@@ -144,7 +144,7 @@ export default function Layout({ children, onStartDemo }: { children: React.Reac
   const mainRef = useRef<HTMLElement>(null);
   useEffect(() => { setMobile(false); window.scrollTo(0, 0); }, [loc.pathname]);
   return (
-    <div className="min-h-screen bg-cream-50">
+    <div className="min-h-screen overflow-x-clip bg-cream-50">
       <div id="app-shell">
         <aside className="fixed inset-y-0 left-0 z-30 hidden w-64 flex-col border-r border-stone-200 bg-white px-4 py-5 lg:flex" data-tour="sidebar">
           <div className="px-1"><Logo /></div>
@@ -164,7 +164,7 @@ export default function Layout({ children, onStartDemo }: { children: React.Reac
               <button onClick={() => { setMobile(false); onStartDemo(); }} className="flex h-11 items-center justify-center gap-2 rounded-xl bg-saffron-500 font-medium text-white"><Play size={16} />Start MLA Demo</button>
             </div>
           </div>)}
-        <div className="lg:pl-64">
+        <div className="min-w-0 lg:pl-64">
           <header className="sticky top-0 z-20 border-b border-stone-200/80 bg-white/90 backdrop-blur">
             <div className="flex h-16 items-center gap-2 px-3 sm:gap-3 sm:px-6">
               <button aria-label="Open navigation menu" onClick={() => setMobile(true)} className="flex h-11 w-11 items-center justify-center rounded-xl hover:bg-stone-100 lg:hidden"><Menu size={22} /></button>

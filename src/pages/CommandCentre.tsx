@@ -62,7 +62,7 @@ export default function CommandCentre({ onStartDemo }: { onStartDemo: () => void
         <Stat label="Outcomes verified" value={m.verified} hint={`${m.resolved} more resolved, awaiting verification`} icon={<ShieldCheck size={16} />} />
       </section>
 
-      <div className="grid gap-6 xl:grid-cols-3">
+      <div className="grid gap-6 xl:grid-cols-3 [&>*]:min-w-0">
         <Card className="xl:col-span-2" data-tour="village-overview">
           <CardHeader title="Constituency village overview" subtitle="Schematic view — not a geographic map. Signal derived from open issues & project delays." action={<Link to="/villages" className="text-sm font-medium text-forest-700 hover:underline">Village 360° →</Link>} />
           <div className="flex flex-wrap gap-3 px-5 pb-3 text-xs text-stone-600">{Object.values(HEALTH).map((h) => <span key={h.label} className="flex items-center gap-1.5"><span className={cx('h-2.5 w-2.5 rounded-full', h.dot)} />{h.label}</span>)}</div>
@@ -94,7 +94,7 @@ export default function CommandCentre({ onStartDemo }: { onStartDemo: () => void
         </Card>
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-2">
+      <div className="grid gap-6 lg:grid-cols-2 [&>*]:min-w-0">
         <Card>
           <CardHeader title="Issues by category" subtitle="Open vs closed (resolved or verified)" />
           <div className="h-72 px-2 pb-4">
@@ -134,7 +134,7 @@ export default function CommandCentre({ onStartDemo }: { onStartDemo: () => void
         </Card>
       </div>
 
-      <div className="grid gap-6 xl:grid-cols-3">
+      <div className="grid gap-6 xl:grid-cols-3 [&>*]:min-w-0">
         <Card>
           <CardHeader title="Urgent — needs staff review" subtitle="Submitted / under review, highest priority first" action={<AlertTriangle size={18} className="text-red-500" />} />
           <ul className="divide-y divide-stone-100 px-2 pb-3">{urgent.length === 0 ? <li className="p-4 text-sm text-stone-500">Nothing awaiting review.</li> : urgent.map((i) => (
