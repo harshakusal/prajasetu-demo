@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html { -webkit-text-size-adjust: 100%; }
+body { font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; color: #1c1917; font-feature-settings: 'cv11', 'ss01'; }
+.print-only { display: none; }
+@media print {
+  @page { size: A4; margin: 14mm; }
+  body { background: #fff !important; }
+  .no-print, aside, header, nav { display: none !important; }
+  .print-only { display: block !important; }
+  .print-root { position: static !important; overflow: visible !important; inset: auto !important; background: #fff !important; padding: 0 !important; }
+  .print-root * { box-shadow: none !important; }
+  .print-break { break-inside: avoid; }
+  #app-shell { display: none !important; }
+}
